@@ -47,3 +47,96 @@
 1. git add -p
 1. git commit - m "continue codealong from here"
 1. git commit -m "continue codealong from here"
+
+
+---
+
+Finishing off this morning's setup:
+
+1. finish routes :
+
+	```
+	var express = require('express'),
+		apiRouter = express.Router(),
+		articlesController = require('../controllers/articles'),
+		Article = require('../models/article');
+
+	apiRouter.route('/articles')
+		.post(function(req, res){
+			console.log(req.body);
+		})
+
+	module.exports = apiRouter;
+	```
+
+
+2. fire up mongo: `$ mongod`
+
+3. make a new db: `$ mongo` `> use men-blog` // or whatever you named your db
+
+	also if you want to make a change to your package.json you will be able to launch nodemon without sepcifying an entry point.
+
+4. At this point you should be able to fire up your server `$ nodemon` || `$ nodemon server.js` and make a post request to /api/articles and see the req.body be logged out in the server
+
+---
+
+
+Let's refactor our .post logic so that it is in the controller:
+
+app/config/routes.js:
+
+
+	```
+	var express = require('express'),
+		apiRouter = express.Router(),
+		articlesController = require('../controllers/articles'),
+		Article = require('../models/article');
+
+	apiRouter.route('/articles')
+		.post(articlesController.create);
+
+	module.exports = apiRouter;
+	```
+
+app/controllers/articles.js:
+
+	```
+	//CONTROLLER
+
+	function create(req, res) {
+		console.log(req.body);
+	}
+
+	module.exports = {
+	  create: create
+	};
+
+	```
+
+should log you POST
+
+---
+
+Now lets make this controller ACTUALLY use our Article Schema
+
+```
+//CONTROLLER
+var Article = require('../models/article');
+
+function create(req, res) {
+	//Instantiate a new article using our awesome Schema:
+	var article = new Article(req.body);
+	//log it in the console, as before
+	console.log(req.body);
+	//save the Article / set up error handling
+	article.save(function(err) {
+		if (err) console.log('not able to create article b/c ' +err);
+
+		res.json({message: 'Article successfully created'});
+	})
+}
+
+module.exports = {
+  create: create
+};
+```
