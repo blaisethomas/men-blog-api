@@ -4,11 +4,7 @@ var express = require('express'),
 	Article = require('../models/article');
 
 apiRouter.route('/articles')
-	.post(function(req, res){
-		console.log(req.body);
-	})
+	.post(articlesController.create)
+	.get(articlesController.index);
 
 module.exports = apiRouter;
-
-
-
