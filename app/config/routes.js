@@ -1,9 +1,14 @@
 var express = require('express'),
-		apiRouter = express.Router(),
-		articlesController = require('../controllers/articles'),
-		Article = require('../models/article');
+	apiRouter = express.Router(),
+	articlesController = require('../controllers/articles'),
+	Article = require('../models/article');
 
 apiRouter.route('/articles')
-	.get()
-	.post();
+	.post(function(req, res){
+		console.log(req.body);
+	})
+
+module.exports = apiRouter;
+
+
 
