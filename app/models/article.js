@@ -2,7 +2,7 @@
 var mongoose = require('mongoose'),
 		Schema = mongoose.Schema;
 
-
+//create a new schema
 var ArticleSchema = new Schema({
 	title: String,
 	author: String,

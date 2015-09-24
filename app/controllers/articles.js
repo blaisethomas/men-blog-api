@@ -14,11 +14,11 @@ function create(req, res) {
 	})
 }
 
-function index(request, response) {
+function index(req, res) {
   Article.find(function(err, articles) {
     if (err) console.log('Could not retrieve articles b/c:', err);
 
-    response.json(articles);
+    res.json(articles);
   });
 }
 
