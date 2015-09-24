@@ -26,7 +26,7 @@
 1. git add .
 1. git commit -m "initial setup + server.js"
 1. git push origin master
-1. cob routes
+1. git checkout -b routes
 1. cd app
 1. mkdir models controllers
 1. mkdir models controllers
