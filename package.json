@@ -1,0 +1,26 @@
+{
+  "name": "men-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blaisethomas/men-blog-api.git"
+  },
+  "keywords": [
+    "im",
+    "bored",
+    "of",
+    "making",
+    "blogs"
+  ],
+  "author": "blaisethomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blaisethomas/men-blog-api/issues"
+  },
+  "homepage": "https://github.com/blaisethomas/men-blog-api#readme"
+}
