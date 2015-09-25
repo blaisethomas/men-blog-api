@@ -1,30 +1,12 @@
 {
-  "name": "men-blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "name": "mean-articles-app",
+  "version": "0.0.1",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/blaisethomas/men-blog-api.git"
-  },
-  "keywords": [
-    "bored",
-    "making",
-    "blogs"
-  ],
-  "author": "blaisethomas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/blaisethomas/men-blog-api/issues"
-  },
-  "homepage": "https://github.com/blaisethomas/men-blog-api#readme",
   "dependencies": {
     "body-parser": "^1.14.0",
     "express": "^4.13.3",
-    "mongoose": "^4.1.8"
+    "mongoose": "^4.1.7"
   }
 }
